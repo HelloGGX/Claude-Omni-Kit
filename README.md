@@ -36,7 +36,7 @@ Compared to similar frameworks:
 ## Get Started in 3 Steps
 1. **Clone the Repository**:
    ```
-   git clone https://github.com/yourusername/Claude-Omni-Kit.git
+   git clone https://github.com/HelloGGX/Claude-Omni-Kit.git
    cd Claude-Omni-Kit
    ```
 
