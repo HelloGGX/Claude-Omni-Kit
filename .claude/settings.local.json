@@ -1,0 +1,13 @@
+{
+  "env": {
+    "ANTHROPIC_API_KEY": "ms-99481fc0-561a-4dd5-9983-39f52de72111",
+    "ANTHROPIC_BASE_URL": "https://api-inference.modelscope.cn",
+    "ANTHROPIC_MODEL": "ZhipuAI/GLM-4.6",
+    "ANTHROPIC_SMALL_FAST_MODEL": "ZhipuAI/GLM-4.6"
+  },
+  "permissions": {
+    "allow": ["Bash(touch:*)", "Bash(cp:*)", "Bash(npx vitest run:*)"],
+    "deny": [],
+    "ask": []
+  }
+}
