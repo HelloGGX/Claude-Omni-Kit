@@ -1,0 +1,17 @@
+{
+  "name": "claude-omni-kit",
+  "version": "1.0.0",
+  "description": "[![GitHub stars](https://img.shields.io/github/stars/HelloGGX/Claude-Omni-Kit?style=social)](https://github.com/HelloGGX/Claude-Omni-Kit/stargazers) [![GitHub license](https://img.shields.io/github/license/HelloGGX/Claude-Omni-Kit)](https://github.com/HelloGGX/Claude-Omni-Kit/blob/main/LICENSE) [![Discord](https://img.shields.io/discord/your-discord-id?label=Discord)](https://discord.gg/your-invite-link)",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.56.1",
+    "@types/node": "^24.10.1"
+  }
+}
