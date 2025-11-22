@@ -6,7 +6,12 @@
     "ANTHROPIC_SMALL_FAST_MODEL": "ZhipuAI/GLM-4.6"
   },
   "permissions": {
-    "allow": ["Bash(touch:*)", "Bash(cp:*)", "Bash(npx vitest run:*)"],
+    "allow": [
+      "Bash(touch:*)",
+      "Bash(cp:*)",
+      "Bash(npx vitest run:*)",
+      "Skill(skill-creator)"
+    ],
     "deny": [],
     "ask": []
   }

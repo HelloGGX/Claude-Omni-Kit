@@ -1,0 +1,32 @@
+target_url: "https://example.com/confluence"  # 替换为您的Confluence dashboard或空间URL
+login_required: true  # 是否需要登录
+login:
+  username_selector: "#username"  # 用户名输入框选择器
+  password_selector: "#password"  # 密码输入框选择器
+  submit_button: "button[type='submit']"  # 登录提交按钮选择器
+  username: "your_username"  # 或使用环境变量 os.environ['CONF_USERNAME']
+  password: "your_password"  # 或使用环境变量 os.environ['CONF_PASSWORD']
+create_button_selector: "button#create-page"  # Confluence创建页面按钮选择器（根据UI调整）
+content_area_selector: "#editor-content"  # 页面内容编辑区域选择器（Confluence富文本编辑器）
+form_fields:
+  title: "#page-title"  # 页面标题输入框选择器
+  body: "#wysiwygTextarea"  # 页面主体内容编辑器选择器
+save_button_selector: "button#save-page"  # 保存/发布按钮选择器
+claude_api_key: "your_claude_api_key"  # 用于文案生成的Anthropic API密钥，或环境变量
+
+# 会议纪要相关配置
+meeting_notes:
+  default_title: "会议纪要"
+  default_location: "会议室A"
+  default_time: "14:00"
+  template_fields:
+    - title
+    - date
+    - time
+    - location
+    - host
+    - attendees
+    - recorder
+    - agenda
+    - discussion
+    - decisions

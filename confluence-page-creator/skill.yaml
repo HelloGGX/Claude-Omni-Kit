@@ -1,0 +1,142 @@
+name: confluence-page-creator
+version: 1.0.0
+description: 自动化在Confluence平台创建文档页面的技能，使用Playwright进行Web界面操作
+author: AI Assistant
+license: MIT
+
+# 配置要求
+requirements:
+  - playwright >= 1.40.0
+  - python >= 3.8
+  - confluence-api (可选，用于API操作)
+
+# 参数定义
+parameters:
+  # Confluence配置
+  confluence_url:
+    type: string
+    description: Confluence服务器URL
+    required: true
+    example: "https://your-company.atlassian.net/wiki"
+
+  space_key:
+    type: string
+    description: Confluence空间键
+    required: true
+    example: "DEV"
+
+  parent_page_id:
+    type: string
+    description: 父页面ID（可选）
+    required: false
+    example: "123456"
+
+  # 认证配置
+  username:
+    type: string
+    description: 用户名
+    required: true
+    example: "your-email@company.com"
+
+  api_token:
+    type: string
+    description: API token或密码
+    required: true
+    sensitive: true
+
+  # 文档配置
+  page_title:
+    type: string
+    description: 页面标题
+    required: true
+    example: "会议纪要 - 2024-01-15"
+
+  page_template:
+    type: string
+    description: 页面模板类型
+    required: false
+    default: "meeting-notes"
+    enum: ["meeting-notes", "project-update", "technical-doc", "custom"]
+
+  tags:
+    type: array
+    description: 页面标签
+    required: false
+    default: []
+    example: ["会议", "纪要", "项目"]
+
+  # 浏览器配置
+  browser:
+    type: string
+    description: 浏览器类型
+    required: false
+    default: "chromium"
+    enum: ["chromium", "firefox", "webkit"]
+
+  headless:
+    type: boolean
+    description: 是否无头模式运行
+    required: false
+    default: true
+
+  timeout:
+    type: integer
+    description: 操作超时时间（毫秒）
+    required: false
+    default: 30000
+
+# 输出定义
+outputs:
+  page_url:
+    type: string
+    description: 创建的页面URL
+  page_id:
+    type: string
+    description: 页面ID
+  success:
+    type: boolean
+    description: 操作是否成功
+  message:
+    type: string
+    description: 状态消息
+
+# 主要工作流程
+workflow:
+  - name: initialize
+    description: 初始化浏览器和认证
+    action: setup_browser_and_auth
+
+  - name: navigate_to_parent
+    description: 导航到父页面
+    action: navigate_to_parent_page
+
+  - name: create_page
+    description: 点击创建按钮
+    action: click_create_button
+
+  - name: generate_content
+    description: 生成页面内容
+    action: generate_page_content
+
+  - name: user_review
+    description: 用户确认和审核
+    action: user_confirmation_step
+
+  - name: fill_content
+    description: 填写内容
+    action: fill_page_content
+
+  - name: save_page
+    description: 保存页面
+    action: save_and_publish
+
+  - name: cleanup
+    description: 清理资源
+    action: cleanup_resources
+
+# 依赖工具
+tools:
+  - playwright
+  - requests (用于API交互)
+  - yaml (配置文件处理)
+  - datetime (时间处理)

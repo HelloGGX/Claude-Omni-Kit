@@ -1,0 +1,21 @@
+# Confluence页面创建器配置示例
+# 请根据您的实际环境修改以下配置
+
+# Confluence平台配置
+confluence_url: "https://your-company.atlassian.net/wiki"
+space_key: "DEV"  # 您的空间键
+parent_page_id: ""  # 可选：父页面ID，如果为空则创建在空间主页
+
+# 认证信息
+username: "your-email@company.com"
+api_token: "your-api-token-here"  # Atlassian API token
+
+# 页面配置
+page_title: "测试页面 - 2024-01-15"
+page_template: "meeting-notes"  # 模板类型: meeting-notes, project-update, technical-doc, custom
+tags: ["测试", "自动化", "playwright"]  # 页面标签
+
+# 浏览器配置
+browser: "chromium"  # chromium, firefox, webkit
+headless: false  # 是否无头模式运行（建议先设为false测试）
+timeout: 30000  # 超时时间（毫秒）
